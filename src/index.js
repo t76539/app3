@@ -1,17 +1,23 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import DenseTable from './DenseTable';
+import Main from './Main';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import SimpleTabs from './SimpleTabs';
+import AlertDialog from './AlertDialog';
+import VerticalTabs from './VerticalTabs';
+import "./i18n";
+import LocalizationDemo from './LocalizationDemo';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Importing the Bootstrap CSS
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<DenseTable />,  document.getElementById('Main'));
+//ReactDOM.render(<Main />,  document.getElementById('Main'));
+//ReactDOM.render(<App />,  document.getElementById('App'));
+//ReactDOM.render(<SimpleTabs />,  document.getElementById('SimpleTabs'));
+//ReactDOM.render(<AlertDialog />,  document.getElementById('AlertDialog'));
+//ReactDOM.render(<VerticalTabs />,  document.getElementById('VerticalTabs'));
+//ReactDOM.render(<LocalizationDemo />,  document.getElementById('LocalizationDemo'));
