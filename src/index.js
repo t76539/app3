@@ -12,9 +12,6 @@ import VerticalTabs from './VerticalTabs';
 import "./i18n";
 import LocalizationDemo from './LocalizationDemo';
 
-// Importing the Bootstrap CSS
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
 ReactDOM.render(<MaterialTableDemo />,  document.getElementById('Main'));
 //ReactDOM.render(<DenseTable />,  document.getElementById('Main'));
 //ReactDOM.render(<Main />,  document.getElementById('Main'));
