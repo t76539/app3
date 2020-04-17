@@ -34,9 +34,9 @@ export default function DenseTable() {
     const classes = useStyles();
     const [checked, setChecked] = React.useState(false);
 
-    const toggleChecked = () => {
-        //setChecked((prev) => !prev);
-
+    const toggleChecked = (event) => {
+        console.log("test:" + event.target.checked);
+        setChecked((prev) => !prev);
     };
 
     return (
