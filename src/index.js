@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MaterialTableDemo from './MaterialTableDemo';
+import MaterialTableDemo from './EnhancedTable';
 import DenseTable from './DenseTable';
 import Main from './Main';
 import App from './App';
