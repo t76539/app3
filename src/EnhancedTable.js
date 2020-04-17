@@ -16,19 +16,26 @@ import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
+import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import SwapVertIcon from '@material-ui/icons/SwapVert';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 function createData(name, status, boot) {
     return {name, calories: status, fat: boot};
 }
 
 const rows = [
-    createData('DServer', 1, 1),
+    createData('DServer', 0, 1),
     createData('XServer', 1, 1),
-    createData('POM Sync Service', 1, 1),
+    createData('POM Sync Service', 0, 1),
+    createData('TRBOnet Importer', 1, 0),
+    createData('TRBOnet Service', 1, 1),
+    createData('RF Switch', 1, 0),
+    createData('Media Switch', 1, 1),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -60,7 +67,7 @@ function stableSort(array, comparator) {
 const headCells = [
     {id: 'name', numeric: false, disablePadding: true, label: 'Service name'},
     {id: 'status', numeric: true, disablePadding: false, label: 'Status'},
-    {id: 'boot', numeric: true, disablePadding: false, label: 'Boot'},
+    {id: 'boot', numeric: true, disablePadding: false, label: 'Start on boot'},
 ];
 
 function EnhancedTableHead(props) {
@@ -152,7 +159,7 @@ const EnhancedTableToolbar = (props) => {
                 </Typography>
             ) : (
                 <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-                    Nutrition
+                    Services
                 </Typography>
             )}
 
@@ -169,6 +176,37 @@ const EnhancedTableToolbar = (props) => {
                     </IconButton>
                 </Tooltip>
             )}
+
+            <Tooltip title="Play">
+                <IconButton aria-label="Play" disabled={numSelected <= 0}>
+                    <PlayCircleOutlineIcon/>
+                </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Pause">
+                <IconButton aria-label="Pause" disabled={numSelected <= 0}>
+                    <PauseCircleOutlineIcon/>
+                </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Restart">
+                <IconButton aria-label="Restart" disabled={numSelected <= 0}>
+                    <SwapVertIcon/>
+                </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Settings">
+                <IconButton aria-label="Settings" disabled={numSelected <= 0}>
+                    <SettingsIcon/>
+                </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Refresh">
+                <IconButton aria-label="Refresh" disabled={numSelected <= 0}>
+                    <RotateLeftIcon/>
+                </IconButton>
+            </Tooltip>
+
         </Toolbar>
     );
 };
@@ -270,7 +308,7 @@ export default function EnhancedTable() {
                     <Table
                         className={classes.table}
                         aria-labelledby="tableTitle"
-                        size={dense ? 'small' : 'medium'}
+                        size='small'
                         aria-label="enhanced table"
                     >
                         <EnhancedTableHead
@@ -316,7 +354,7 @@ export default function EnhancedTable() {
                                     );
                                 })}
                             {emptyRows > 0 && (
-                                <TableRow style={{height: (dense ? 33 : 53) * emptyRows}}>
+                                <TableRow style={{height: 33 * emptyRows}}>
                                     <TableCell colSpan={6}/>
                                 </TableRow>
                             )}
@@ -333,10 +371,6 @@ export default function EnhancedTable() {
                     onChangeRowsPerPage={handleChangeRowsPerPage}
                 />
             </Paper>
-            <FormControlLabel
-                control={<Switch checked={dense} onChange={handleChangeDense}/>}
-                label="Dense padding"
-            />
         </div>
     );
 }
