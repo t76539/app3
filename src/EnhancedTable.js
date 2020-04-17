@@ -36,6 +36,7 @@ const rows = [
     createData('TRBOnet Service', 1, 1),
     createData('RF Switch', 1, 0),
     createData('Media Switch', 1, 1),
+    createData('Watchdog', 1, 1),
 ];
 
 function descendingComparator(a, b, orderBy) {
