@@ -25,7 +25,7 @@ import SwapVertIcon from '@material-ui/icons/SwapVert';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 function createData(name, status, boot) {
-    return {name, calories: status, fat: boot};
+    return {name: name, status: status, boot: boot};
 }
 
 const rows = [
@@ -267,7 +267,8 @@ export default function EnhancedTable() {
     const handleClick = (event, name) => {
         const selectedIndex = selected.indexOf(name);
         let newSelected = [];
-
+        console.log('selectedIndex: ' + selectedIndex + ' name: ' + name);
+        console.log(event);
         if (selectedIndex === -1) {
             newSelected = newSelected.concat(selected, name);
         } else if (selectedIndex === 0) {
@@ -283,6 +284,10 @@ export default function EnhancedTable() {
 
         setSelected(newSelected);
     };
+
+    const handleCbClick = (event) => {
+        console.log('CheckBox.Click');
+    }
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -331,7 +336,6 @@ export default function EnhancedTable() {
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={(event) => handleClick(event, row.name)}
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
@@ -340,6 +344,7 @@ export default function EnhancedTable() {
                                         >
                                             <TableCell padding="checkbox">
                                                 <Checkbox
+                                                    onClick={(event) => handleClick(event, row.name)}
                                                     checked={isItemSelected}
                                                     inputProps={{'aria-labelledby': labelId}}
                                                 />
@@ -347,10 +352,13 @@ export default function EnhancedTable() {
                                             <TableCell component="th" id={labelId} scope="row" padding="none">
                                                 {row.name}
                                             </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                            <TableCell align="right">{row.fat}</TableCell>
-                                            <TableCell align="right">{row.carbs}</TableCell>
-                                            <TableCell align="right">{row.protein}</TableCell>
+                                            <TableCell align="right">{row.status}</TableCell>
+                                            {/*<TableCell align="right">{row.boot}</TableCell>*/}
+                                            <TableCell padding="checkbox">
+                                                <Checkbox
+                                                    onChange={(event) => handleCbClick(event)}
+                                                />
+                                            </TableCell>
                                         </TableRow>
                                     );
                                 })}

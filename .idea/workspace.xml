@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d33d54e2-e30e-41bd-af49-4673e2ea4b10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnhancedTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnhancedTable.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +31,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -91,7 +92,13 @@
       <updated>1586769758423</updated>
       <workItem from="1586769812232" duration="10263000" />
       <workItem from="1586865956161" duration="28569000" />
-      <workItem from="1587144268664" duration="7538000" />
+      <workItem from="1587144268664" duration="8140000" />
+      <workItem from="1587221259254" duration="1651000" />
+      <workItem from="1587302805416" duration="2856000" />
+      <workItem from="1587540424927" duration="4572000" />
+      <workItem from="1587717626896" duration="2804000" />
+      <workItem from="1587726571227" duration="65000" />
+      <workItem from="1587810066016" duration="747000" />
     </task>
     <servers />
   </component>
