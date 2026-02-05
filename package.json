@@ -20,7 +20,7 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.3.4",
     "react-localization": "^1.0.15",
-    "react-scripts": "3.4.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
